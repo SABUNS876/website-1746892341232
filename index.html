@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+<title>Anomali yang Suka Coli</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Rubik+Wet+Paint&display=swap');
+  body {
+    margin: 0;
+    background: #121212;
+    font-family: 'Rubik Wet Paint', cursive;
+    color: #e0e0e0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+  }
+  .container {
+    background: linear-gradient(145deg, #222222, #121212);
+    border-radius: 12px;
+    box-shadow:
+      5px 5px 15px #0b0b0b,
+      -5px -5px 15px #2c2c2c;
+    padding: 30px;
+    max-width: 400px;
+    text-align: center;
+    user-select: none;
+  }
+  h1 {
+    font-size: 2.5rem;
+    color: #ff005a;
+    margin-bottom: 10px;
+  }
+  p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    color: #ccc;
+  }
+  button {
+    background: #ff005a;
+    border: none;
+    padding: 12px 24px;
+    color: #fff;
+    font-size: 1.1rem;
+    border-radius: 30px;
+    cursor: pointer;
+    box-shadow:
+      2px 2px 8px #b70048,
+      inset 0 0 15px #ff4081;
+    transition: background-color 0.3s ease;
+    user-select: none;
+  }
+  button:hover,
+  button:focus {
+    background-color: #e6004a;
+    outline: none;
+  }
+  .message {
+    margin-top: 25px;
+    font-weight: bold;
+    font-size: 1.3rem;
+    min-height: 2em;
+    color: #ff4081;
+  }
+  @media (max-width: 400px) {
+    .container {
+      width: 100%;
+      padding: 20px;
+    }
+    h1 {
+      font-size: 2rem;
+    }
+    p {
+      font-size: 1rem;
+    }
+    button {
+      width: 100%;
+      font-size: 1rem;
+      padding: 10px 0;
+    }
+  }
+</style>
+</head>
+<body>
+  <div class="container" role="main" aria-label="Anomali yang Suka Coli">
+    <h1>Anomali yang Suka Coli</h1>
+    <p>Tekan tombol di bawah untuk melihat pesan aneh dari Anomali.</p>
+    <button id="coliButton" aria-describedby="messageDescription" aria-live="polite">Tampilkan Pesan</button>
+    <div class="message" id="message" aria-live="polite" aria-atomic="true"></div>
+    <div id="messageDescription" class="sr-only">Pesan yang ditampilkan akan muncul di bawah tombol ini.</div>
+  </div>
+<script>
+  (function(){
+    const messages = [
+      "Anomali sedang asik coli.",
+      "Coli time activated!",
+      "Jangan ganggu, lagi coli.",
+      "Kenikmatan coli tiada tara.",
+      "Anomali overload dengan coli.",
+      "Coli jalan terus sampai pagi.",
+      "Hidup cuma sekali, coli maksimal!",
+      "Self love? Anomali ahlinya.",
+      "Anomali + coli = kebahagiaan.",
+      "Santai sambil coli, hidup enak.",
+      "Anomali berkata: keep calm and coli on.",
+      "Coli, putar ulang, repeat.",
+      "Bersatulah dalam semangat coli.",
+      "Anomali: master coli sejak lahir.",
+      "Jangan lupa minum air saat coli."
+    ];
+    const btn = document.getElementById('coliButton');
+    const msg = document.getElementById('message');
+    btn.addEventListener('click', () => {
+      const index = Math.floor(Math.random() * messages.length);
+      msg.textContent = messages[index];
+      btn.focus();
+    });
+  })();
+</script>
+</body>
+</html>
+
+```
